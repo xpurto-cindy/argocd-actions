@@ -1,0 +1,23 @@
+name: "ArgoCD Application Sync Action (allow insecure)"
+description: "Sync your ArgoCD application from GitHub"
+author: "butterfly1924"
+inputs:
+  address:
+    description: "ArgoCD server address"
+    required: true
+  token:
+    description: "ArgoCD token"
+    required: true
+  appName:
+    description: "Application name to sync"
+    required: true
+  insecure:
+    description: "Whether server is insecure"
+    required: true
+  imageTag:
+    description: "Set parameter: image.tag"
+    required: true
+
+runs:
+  using: "docker"
+  image: "docker://bardolphshampine77769/argocd-actions:v1.1.0"
